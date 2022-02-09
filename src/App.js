@@ -2,7 +2,7 @@ import Blog from "components/Blog";
 import Contact from "components/Contact";
 import Footer from "components/Footer";
 import Home from "components/Home";
-import MileStone from "components/Milestone";
+import MileStones from "components/Milestones";
 import Portfolio from "components/Portfolio";
 import Pricing from "components/Pricing";
 import ScrollToTop from "components/ScrollToTop";
@@ -19,7 +19,7 @@ function App() {
       <Home />
       <Services />
       <Portfolio />
-      <MileStone />
+      <MileStones />
       <Blog />
       <Video />
       <Pricing />

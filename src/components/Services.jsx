@@ -11,7 +11,7 @@ const Services = () => {
     {
       type: "Design",
       text: "Bearable only through love of hydrogen atoms bits of moving fluff culture shores of the on cosmic ocean blue sky.",
-      img: service1,
+      image: service1,
     },
     {
       type: "Code",
@@ -30,12 +30,20 @@ const Services = () => {
       <Title value='services'/>
       <div className="services">
         {
-          data.map(({type, text, img}, index) => {
+          data.map(({type, text, image}, index) => {
             return (
               <div className="services__service">
                 <div className="services__service__image">
-                  <img src={img} alt="Service" />
+                  <img src={image} alt="Service" />
                 </div>
+                <div className="services__service__title">
+                  <span>0{index+1}</span>
+                  <h2>{type}</h2>
+                </div>
+                <p className="services__service__description">
+                  {text}
+                </p>
+                <img src={play} alt="Play" />
               </div>
             )
           })
@@ -46,6 +54,52 @@ const Services = () => {
 };
 
 const Section = styled.section`
+  min-height: 100vh;
+  
+  .services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    height: 100%;
+    margin: 0 14rem;
+    margin-top: 10rem;
+    gap: 5rem;
+
+    &__service {
+      padding: 2rem;
+      
+      &:nth-of-type(3){
+        background-color: var(--primary-color);
+        .services__service__title{
+          span{
+            color: white;
+          }
+        }
+        .services__service__description{
+          color: white;
+        }
+      }
+      &__image {
+        margin-bottom: 3rem;
+      }
+      &__title {
+        span{
+          color: var(--primary-color);
+          font-weight: bolder;
+        }
+        h2{
+          font-size: 3rem;
+          line-height: 2.5rem;
+          margin-bottom: 5rem;
+          color: var(--secondary-color);
+        }
+      }
+      &__description {
+        color: var(--primary-color);
+        margin-bottom: 2rem;
+      }
+    }
+  }
 `;
 
 export default Services;
